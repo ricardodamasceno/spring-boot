@@ -9,6 +9,6 @@ CREATE TABLE user(
   birth_date DATETIME     NULL
 );
 
-INSERT INTO user VALUES (null, 'Ricardo', 'Damasceno', '1988-03-17 09:30:00');
-INSERT INTO user VALUES (null, 'Sara', 'Damasceno', '1992-04-08 09:30:00');
-INSERT INTO user VALUES (null, 'Alexandre', 'Damasceno', '2016-04-12 09:30:00');
+INSERT INTO user VALUES (null, 'Hurin', 'Thalion', '1988-03-17 09:30:00');
+INSERT INTO user VALUES (null, 'Turin', 'Turambar', '1992-04-08 09:30:00');
+INSERT INTO user VALUES (null, 'Arwen', 'Undomiel', '2016-04-12 09:30:00');
