@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/user")
@@ -21,7 +20,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public @ResponseBody Optional<User> findUserById(@PathVariable("id") Long id){
+    public @ResponseBody User findUserById(@PathVariable("id") Long id){
         return userService.findById(id);
     }
 
