@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/user")
+@RequestMapping(RestMethods.V1 + RestMethods.User.PATH)
 public class UserController {
 
     @Autowired
@@ -19,7 +19,7 @@ public class UserController {
         return userService.findAll();
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = RestMethods.User.V1.FIND_USER_BY_ID, method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody User findUserById(@PathVariable("id") Long id){
         return userService.findById(id);
     }
