@@ -1,33 +1,19 @@
-package com.boot.model;
+package com.boot.vo.request;
 
-import javax.persistence.*;
+
+import javax.ws.rs.QueryParam;
 import java.util.Date;
 
-@Entity
-@Table(name = "user")
-public class User {
+public class UserRequestVO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
-    private Long id;
-
-    @Column(name="name")
+    @QueryParam("name")
     private String name;
 
-    @Column(name="last_name")
+    @QueryParam("lastName")
     private String lastName;
 
-    @Column(name="birth_date")
+    @QueryParam("birthDate")
     private Date birthDate;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

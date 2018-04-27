@@ -3,6 +3,7 @@ package com.boot.service.impl;
 import com.boot.model.User;
 import com.boot.repository.UserRepository;
 import com.boot.service.UserService;
+import com.boot.vo.request.UserRequestVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +17,19 @@ public class UserServiceImpl implements UserService{
     private UserRepository userRepository;
 
     public List<User> findAll(){
-        return (List<User>) userRepository.findAll();
+        return userRepository.findAll();
     }
 
     public User findById(Long id){
         return userRepository.findById(id).get();
+    }
+
+    public User createUser(UserRequestVO request){
+        User user = new User();
+        user.setName(request.getName());
+        user.setLastName(request.getLastName());
+        user.setBirthDate(request.getBirthDate());
+        return userRepository.save(user);
     }
 
 }
