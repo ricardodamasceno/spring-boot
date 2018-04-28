@@ -18,8 +18,8 @@ public class User {
     @Column(name="last_name")
     private String lastName;
 
-    @Column(name="birth_date")
-    private Date birthDate;
+    @Column(name="birth_day")
+    private Date birthDay;
 
     public Long getId() {
         return id;
@@ -45,11 +45,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public Date getBirthDay() {
+        return birthDay;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthDay(Date birthDay) {
+        this.birthDay = birthDay;
     }
 }

@@ -24,11 +24,15 @@ public class UserServiceImpl implements UserService{
         return userRepository.findById(id).get();
     }
 
+    public void deleteUser(Long id){
+        userRepository.delete(findById(id));
+    }
+
     public User createUser(UserRequestVO request){
         User user = new User();
         user.setName(request.getName());
         user.setLastName(request.getLastName());
-        user.setBirthDate(request.getBirthDate());
+        user.setBirthDay(request.getBirthDate());
         return userRepository.save(user);
     }
 

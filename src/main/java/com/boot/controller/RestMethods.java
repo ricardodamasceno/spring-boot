@@ -10,6 +10,7 @@ public interface RestMethods {
 
         interface V1{
             public static final String FIND_USER_BY_ID = "/{id}";
+            public static final String DELETE_USER_BY_ID = "/{id}";
         }
     }
 }

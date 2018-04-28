@@ -26,9 +26,14 @@ public class UserController {
         return userService.findAll();
     }
 
-    @RequestMapping(value = RestMethods.User.V1.FIND_USER_BY_ID, method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = RestMethods.User.V1.FIND_USER_BY_ID, method = RequestMethod.GET)
     public @ResponseBody User findUserById(@PathVariable("id") Long id){
         return userService.findById(id);
+    }
+
+    @RequestMapping(value = RestMethods.User.V1.DELETE_USER_BY_ID, method = RequestMethod.DELETE)
+    public void deleteUser(@PathVariable("id") Long id){
+        userService.deleteUser(id);
     }
 
 }
