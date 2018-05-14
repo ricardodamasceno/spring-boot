@@ -5,8 +5,10 @@ import com.boot.repository.UserRepository;
 import com.boot.service.UserService;
 import com.boot.vo.request.UserRequestVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,6 +36,11 @@ public class UserServiceImpl implements UserService{
         user.setLastName(request.getLastName());
         user.setBirthDay(request.getBirthDate());
         return userRepository.save(user);
+    }
+
+    @Scheduled(cron = "*/5 * * * * *")
+    public void timer(){
+        System.out.println("Running job " + new Date().getTime());
     }
 
 }
