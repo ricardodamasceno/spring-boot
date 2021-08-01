@@ -38,9 +38,4 @@ public class UserServiceImpl implements UserService{
         return userRepository.save(user);
     }
 
-    @Scheduled(cron = "*/5 * * * * *")
-    public void timer(){
-        System.out.println("Running job " + new Date().getTime());
-    }
-
 }
